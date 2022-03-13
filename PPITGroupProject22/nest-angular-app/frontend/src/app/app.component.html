@@ -1,0 +1,35 @@
+
+<!--Make this homepage?-->
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <h1>JustDrink</h1>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"><a href="http://localhost:4200">home</a></mat-icon>
+        <button mat-button [matMenuTriggerFor]="locations">Locations</button>
+<mat-menu #locations="matMenu" yPosition="above">
+  <button mat-menu-item>Mayo</button>
+  <button mat-menu-item>Galway</button>
+  <button mat-menu-item>Sligo</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="pubs">Pubs</button>
+<mat-menu #pubs="matMenu" yPosition="below">
+  <button mat-menu-item>Order In</button>
+  <button mat-menu-item>Takeaway</button>
+</mat-menu>
+
+
+<button mat-button [matMenuTriggerFor]="loginMenu">Login</button>
+<mat-menu #loginMenu="matMenu" xPosition="after">
+  <button mat-menu-item>Customer</button>
+  <button mat-menu-item><a href="http://localhost:4200/stafflogin">Staff</a></button>
+
+  <!-- <aio-search-box>
+      <input type="search" aria-label="search" placeholder="Search">
+  </aio-search-box> -->
+</mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- how routing can work. -->
+
+<router-outlet></router-outlet>
