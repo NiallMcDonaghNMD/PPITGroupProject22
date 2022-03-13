@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 //imports nest service that works with contact table - contains CRUD operations to update Database.
-import { Repository } from  'typeorm';
 import { Repository, UpdateResult, DeleteResult } from  'typeorm';
 import { Contact } from  '../entities/contact.entity';
 

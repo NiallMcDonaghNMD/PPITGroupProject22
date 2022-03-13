@@ -1,8 +1,7 @@
 // Creates RESTFUL endpoints that Angular frontend will call to retrieve and create data on the server.
-import { Controller } from '@nestjs/common';
-import { ContactService } from 'contact.service';
+import { ContactService } from '../contact/contact.service';
 import { Controller, Get, Post,Put, Delete, Body, Param } from  '@nestjs/common';
-import { Contact } from  'entities/contact.entity';
+import { Contact } from  '../entities/contact.entity';
 
 @Controller('contacts')
 export class ContactsController {
