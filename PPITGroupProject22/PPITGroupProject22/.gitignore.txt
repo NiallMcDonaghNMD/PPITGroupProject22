@@ -1,0 +1,2 @@
+nest-angular-app/frontend/node_modules
+nest-angular-app/frontend/angular/
