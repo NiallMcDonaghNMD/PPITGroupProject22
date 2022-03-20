@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 **/node_modules
+=======
+nest-angular-app/frontend/node_modules
+nest-angular-app/frontend/angular/
+>>>>>>> c79147701e1e79080e6e07a9498515127507864e
