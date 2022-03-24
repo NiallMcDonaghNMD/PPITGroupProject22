@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ApiService } from '../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-staff-login',
@@ -7,10 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StaffLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
-  
+
   ngOnInit(): void {
+    this.apiService.jwtUserToken.subscribe(token => {
+      if (token) {
+        this.router.navigateByUrl('/').then();
+      }
+    });
   }
 
+  
+  login(loginForm: NgForm) {
+    if (loginForm.invalid) {
+      return;
+
+    }
+    const { username, password } = loginForm.value;
+    this.apiService.login(username, password);
+    console.log("error here");
+
+    return loginForm.reset();
+  }
 }

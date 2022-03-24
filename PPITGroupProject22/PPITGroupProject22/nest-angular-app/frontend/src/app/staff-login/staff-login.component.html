@@ -1,16 +1,16 @@
 <p>staff-login works!</p>
 <!-- login button, basic but functional. look into replacing later -->
-<form action="action_page.php" method="post">
+<form #loginForm="ngForm" (ngSubmit)=login(loginForm) action="action_page.php" method="post">
     <div class="imgcontainer">
       <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
   
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="staffUname" required>
+      <input type="text" placeholder="Enter Username" name="username" required>
   
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="staffPw" required>
+      <input type="password" placeholder="Enter Password" name="password" required>
   
       <button type="submit">Login</button>
       <label>
