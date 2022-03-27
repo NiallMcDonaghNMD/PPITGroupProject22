@@ -31,7 +31,7 @@ __decorate([
     __metadata("design:type", String)
 ], userEntity.prototype, "salt", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => userEntity_1, (login) => login.id),
+    (0, typeorm_1.OneToMany)(() => userEntity_1, (login) => login.username),
     __metadata("design:type", Array)
 ], userEntity.prototype, "todos", void 0);
 userEntity = userEntity_1 = __decorate([

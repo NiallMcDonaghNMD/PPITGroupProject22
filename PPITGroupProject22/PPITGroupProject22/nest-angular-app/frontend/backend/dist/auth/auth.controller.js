@@ -25,7 +25,7 @@ let AuthController = class AuthController {
         return this.authService.registerUser(regDTO);
     }
     signIn(loginDTO) {
-        return this.authService.registerUser(loginDTO);
+        return this.authService.loginuser(loginDTO);
     }
 };
 __decorate([

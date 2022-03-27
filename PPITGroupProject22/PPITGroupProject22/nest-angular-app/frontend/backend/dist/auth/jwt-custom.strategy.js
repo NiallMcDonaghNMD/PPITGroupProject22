@@ -31,7 +31,7 @@ let jwtCustomStrategy = class jwtCustomStrategy extends (0, passport_1.PassportS
         const { username } = payload;
         const user = await this.repo.findOne({ username });
         if (!user) {
-            throw new common_1.UnauthorizedException();
+            throw new common_1.UnauthorizedException("unauthorised user payload");
         }
         return user;
     }

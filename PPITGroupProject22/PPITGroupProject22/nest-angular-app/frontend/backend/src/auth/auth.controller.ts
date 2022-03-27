@@ -4,7 +4,7 @@ import { RegisterUserDto } from "../DTO/registerUser.dto";
 import { userLoginDto } from "src/DTO/userLogin.dto";
 
 
-//http://localhost:3000/api/auth
+//http://localhost:3000/auth
 @Controller('auth')
 export class AuthController {
 
@@ -19,6 +19,6 @@ export class AuthController {
 
   @Post('login')
   signIn(@Body(ValidationPipe) loginDTO: userLoginDto) {
-    return this.authService.registerUser(loginDTO);
+    return this.authService.loginuser(loginDTO);
   }
 }

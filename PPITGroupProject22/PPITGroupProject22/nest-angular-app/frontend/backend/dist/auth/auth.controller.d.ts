@@ -5,5 +5,7 @@ export declare class AuthController {
     private authService;
     constructor(authService: AuthService);
     registration(regDTO: RegisterUserDto): Promise<import("../entities/user.entity").userEntity>;
-    signIn(loginDTO: userLoginDto): Promise<import("../entities/user.entity").userEntity>;
+    signIn(loginDTO: userLoginDto): Promise<{
+        token: string;
+    }>;
 }

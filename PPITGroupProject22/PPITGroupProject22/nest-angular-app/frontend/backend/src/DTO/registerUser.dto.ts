@@ -6,6 +6,7 @@ export class RegisterUserDto{
 
     @IsNotEmpty()
     @MinLength(6) @MaxLength(12)
+    //regex expression
      @Matches(/(?:(?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
         message: "Password is too weak, choose a stronger password between 6 and 12 characters"
       })

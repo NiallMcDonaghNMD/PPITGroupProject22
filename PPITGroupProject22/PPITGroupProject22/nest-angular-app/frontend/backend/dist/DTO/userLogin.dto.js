@@ -17,5 +17,9 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], userLoginDto.prototype, "username", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], userLoginDto.prototype, "password", void 0);
 exports.userLoginDto = userLoginDto;
 //# sourceMappingURL=userLogin.dto.js.map

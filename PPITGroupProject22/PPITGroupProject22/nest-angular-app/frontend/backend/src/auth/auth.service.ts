@@ -30,11 +30,10 @@ export class AuthService {
         } catch (err) {
             throw new InternalServerErrorException('Something went wrong, user was not created.');
         }
-
-
-    }//end authservice
+    }
 
     async loginuser(userLoginDto: userLoginDto) {
+        console.log(userLoginDto);
         const { username, password } = userLoginDto;
 
         const user = await this.repo.findOne({ username });
@@ -44,7 +43,7 @@ export class AuthService {
         }
 
         const salt = user.salt;
-           const isPasswordMatch = await bcrypt.compare(password, user.password);
+        const isPasswordMatch = await bcrypt.compare(password, user.password);
        // const isPasswordMatch = user.verifyPassword(password);
 
         if (isPasswordMatch) {
@@ -57,6 +56,4 @@ export class AuthService {
 
         }
     }
-
-    async
 }

@@ -17,7 +17,7 @@ export class LoginService {
     {
         const query = await this.repo.createQueryBuilder('login');
 
-        query.where('login.userId = :userId', {userId: user.id});
+        query.where('todo.userId = :userId', {userId: user.id});
         //return await this.repo.find();
 
         try{

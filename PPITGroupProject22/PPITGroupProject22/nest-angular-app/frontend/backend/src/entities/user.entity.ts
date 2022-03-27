@@ -16,13 +16,13 @@ export class userEntity {
     @Column()
     salt: string;
 
-    @OneToMany(() => userEntity, (login) => login.id) //proberbly wrong, login.id
+    @OneToMany(() => userEntity, (login) => login.username) //proberbly wrong, login.id
     todos: userEntity[]
 
-    // async verifyPassword(password: string){
+    // async verifyPassword(password: string) {
     //      const hash = await bcrypt.hash(password, this.salt);
     //      return hash == this.password;
     //     //return await bcrypt.compare(password, this.password);
 
-    // }
+    //}
 }

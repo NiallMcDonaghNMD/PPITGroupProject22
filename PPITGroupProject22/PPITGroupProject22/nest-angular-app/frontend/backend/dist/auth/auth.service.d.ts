@@ -11,5 +11,4 @@ export declare class AuthService {
     loginuser(userLoginDto: userLoginDto): Promise<{
         token: string;
     }>;
-    async: any;
 }

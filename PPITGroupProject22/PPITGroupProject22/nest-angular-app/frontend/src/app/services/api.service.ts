@@ -31,7 +31,7 @@ export class ApiService {
 
   /* Getting All logins */
   getAllLogins(): Observable<any> {
-    return this.http.get(`${this.API_URL}/login`, {
+    return this.http.get(`${this.API_URL}/auth/login`, {
       headers: {
         Authorization: `Bearer ${this.token}`
       }
@@ -40,7 +40,7 @@ export class ApiService {
 
   login(username: string, password: string) {
 
-    this.http.post(`${this.API_URL}/auth/login`, {username, password})
+    this.http.post(`${this.API_URL}/login`, {username, password})
       // @ts-ignore
       .subscribe((res: { token: string }) => {
         this.token = res.token;
