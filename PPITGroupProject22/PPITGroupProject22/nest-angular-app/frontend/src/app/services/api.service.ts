@@ -40,7 +40,7 @@ export class ApiService {
 
   login(username: string, password: string) {
 
-    this.http.post(`${this.API_URL}/login`, {username, password})
+    this.http.post(`${this.API_URL}/auth/stafflogin`, {username, password})
       // @ts-ignore
       .subscribe((res: { token: string }) => {
         this.token = res.token;
@@ -58,6 +58,11 @@ export class ApiService {
       }, (err: HttpErrorResponse) => console.log(err.message));
   }
 
+  register (username: string, password: string)
+  {
+    return this.http.post(`${this.API_URL}/staffregister`, {username, password})
+
+  }
   // tslint:disable-next-line:typedef
   logout() {
     this.token = '';

@@ -29,14 +29,14 @@ let AuthController = class AuthController {
     }
 };
 __decorate([
-    (0, common_1.Post)('register'),
+    (0, common_1.Post)('staffregister'),
     __param(0, (0, common_1.Body)(common_1.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [registerUser_dto_1.RegisterUserDto]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "registration", null);
 __decorate([
-    (0, common_1.Post)('login'),
+    (0, common_1.Post)('stafflogin'),
     __param(0, (0, common_1.Body)(common_1.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [userLogin_dto_1.userLoginDto]),

@@ -6,6 +6,7 @@ import { RegisterUserDto } from "../DTO/registerUser.dto";
 import * as bcrypt from 'bcryptjs';
 import { userLoginDto } from "src/DTO/userLogin.dto";
 import { JwtService } from "@nestjs/jwt"
+import {createShopDto} from "src/DTO/createShop.dto";
 
 @Injectable()
 export class AuthService {
@@ -56,4 +57,29 @@ export class AuthService {
 
         }
     }
+
+    // async shopCreate(createShopDto: createShopDto) {
+    //     console.log(createShopDto);
+    //     const { shopName, itemList } = createShopDto;
+
+    //     const shop = await this.repo.findOne({ });
+
+    //     if (!shop) {
+    //         throw new UnauthorizedException('Invalid credentials');
+    //     }
+
+    //     //const salt = user.salt;
+    //     const isShopMatch = await compare(shopName, shop.s);
+    //    // const isPasswordMatch = user.verifyPassword(password);
+
+    //     if (isShopMatch) {
+    //         //do something here - validation
+           
+    //         return {  };
+    //     }
+    //     else {
+    //         throw new UnauthorizedException('Invalid credentials');
+
+    //     }
+    // }
 }

@@ -12,12 +12,12 @@ export class AuthController {
   }
 
 
-  @Post('register')
+  @Post('staffregister')
   registration(@Body(ValidationPipe) regDTO: RegisterUserDto) {
     return this.authService.registerUser(regDTO);
   }
 
-  @Post('login')
+  @Post('stafflogin')
   signIn(@Body(ValidationPipe) loginDTO: userLoginDto) {
     return this.authService.loginuser(loginDTO);
   }
