@@ -60,7 +60,7 @@ export class ApiService {
 
   register (username: string, password: string)
   {
-    return this.http.post(`${this.API_URL}/staffregister`, {username, password})
+    return this.http.post(`${this.API_URL}/auth/staffregister`, {username, password})
 
   }
   // tslint:disable-next-line:typedef

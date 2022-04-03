@@ -34,7 +34,6 @@ export class AuthService {
     }
 
     async loginuser(userLoginDto: userLoginDto) {
-        console.log(userLoginDto);
         const { username, password } = userLoginDto;
 
         const user = await this.repo.findOne({ username });
@@ -58,28 +57,6 @@ export class AuthService {
         }
     }
 
-    // async shopCreate(createShopDto: createShopDto) {
-    //     console.log(createShopDto);
-    //     const { shopName, itemList } = createShopDto;
-
-    //     const shop = await this.repo.findOne({ });
-
-    //     if (!shop) {
-    //         throw new UnauthorizedException('Invalid credentials');
-    //     }
-
-    //     //const salt = user.salt;
-    //     const isShopMatch = await compare(shopName, shop.s);
-    //    // const isPasswordMatch = user.verifyPassword(password);
-
-    //     if (isShopMatch) {
-    //         //do something here - validation
-           
-    //         return {  };
-    //     }
-    //     else {
-    //         throw new UnauthorizedException('Invalid credentials');
-
-    //     }
-    // }
+    
+    
 }

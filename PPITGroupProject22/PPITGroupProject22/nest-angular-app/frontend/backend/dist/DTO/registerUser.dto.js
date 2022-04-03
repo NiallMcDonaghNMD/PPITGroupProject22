@@ -27,4 +27,3 @@ __decorate([
     __metadata("design:type", String)
 ], RegisterUserDto.prototype, "password", void 0);
 exports.RegisterUserDto = RegisterUserDto;
-//# sourceMappingURL=registerUser.dto.js.map

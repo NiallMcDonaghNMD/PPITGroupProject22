@@ -22,4 +22,3 @@ __decorate([
     __metadata("design:type", String)
 ], userLoginDto.prototype, "password", void 0);
 exports.userLoginDto = userLoginDto;
-//# sourceMappingURL=userLogin.dto.js.map

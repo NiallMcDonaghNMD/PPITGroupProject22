@@ -15,9 +15,9 @@ export class StaffLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.jwtUserToken.subscribe(token => {
-      if (token) {
-        this.router.navigateByUrl('/').then();
-      }
+      // if (token) {                             //Webpage doesnt load with this enabled, look into implementing tokens successfully later - Frontend?
+      //   this.router.navigateByUrl('/').then();
+      // }
     });
   }
 
@@ -29,8 +29,6 @@ export class StaffLoginComponent implements OnInit {
     }
     const { username, password } = loginForm.value;
     this.apiService.login(username, password);
-    console.log("error here");
-
     return loginForm.reset();
   }
 }

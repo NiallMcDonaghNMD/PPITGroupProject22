@@ -33,4 +33,3 @@ shopEntity = __decorate([
     (0, typeorm_1.Entity)()
 ], shopEntity);
 exports.shopEntity = shopEntity;
-//# sourceMappingURL=shop.entity.js.map

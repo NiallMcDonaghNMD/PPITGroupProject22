@@ -31,7 +31,7 @@ let jwtCustomStrategy = class jwtCustomStrategy extends (0, passport_1.PassportS
         const { username } = payload;
         const user = await this.repo.findOne({ username });
         if (!user) {
-            throw new common_1.UnauthorizedException("unauthorised user payload");
+            throw new common_1.UnauthorizedException();
         }
         return user;
     }
@@ -41,4 +41,3 @@ jwtCustomStrategy = __decorate([
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], jwtCustomStrategy);
 exports.jwtCustomStrategy = jwtCustomStrategy;
-//# sourceMappingURL=jwt-custom.strategy.js.map

@@ -1,1 +1,0 @@
-{"version":3,"file":"shop.component.js","sourceRoot":"","sources":["../../src/shop/shop.component.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,wCAAkD;AAOlD,IAAa,aAAa,GAA1B,MAAa,aAAa;IAExB,gBAAgB,CAAC;IAEjB,QAAQ;IACR,CAAC;CAEF,CAAA;AAPY,aAAa;IALzB,IAAA,gBAAS,EAAC;QACT,QAAQ,EAAE,UAAU;QACpB,WAAW,EAAE,uBAAuB;QACpC,SAAS,EAAE,CAAC,sBAAsB,CAAC;KACpC,CAAC;;GACW,aAAa,CAOzB;AAPY,sCAAa"}

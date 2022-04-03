@@ -21,10 +21,8 @@ export class staffRegisterComponent implements OnInit {
     }
 
     const { username, password } = registerForm.value;
-    console.log(username, "=>", password);
 
     this.apiService.register(username, password).subscribe(res => {
-      console.log(res);
 
       registerForm.reset();
     });

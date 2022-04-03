@@ -6,4 +6,3 @@ exports.Shop = (0, common_1.createParamDecorator)((data, ctx) => {
     const request = ctx.switchToHttp().getRequest();
     return request.shop;
 });
-//# sourceMappingURL=shop.decorator.js.map

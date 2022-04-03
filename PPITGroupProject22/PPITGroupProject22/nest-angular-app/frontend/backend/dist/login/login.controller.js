@@ -77,4 +77,3 @@ LoginController = __decorate([
     __metadata("design:paramtypes", [login_service_1.LoginService])
 ], LoginController);
 exports.LoginController = LoginController;
-//# sourceMappingURL=login.controller.js.map

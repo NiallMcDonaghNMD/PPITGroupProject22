@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
-    "sourceMap": true,
+    "sourceMap": false, //get rid of .js and .js.map files
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,

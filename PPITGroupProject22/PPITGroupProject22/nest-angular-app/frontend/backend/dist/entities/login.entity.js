@@ -48,4 +48,3 @@ var loginStatus;
     loginStatus["WIP"] = "WIP";
     loginStatus["COMPLETED"] = "COMPLETED";
 })(loginStatus = exports.loginStatus || (exports.loginStatus = {}));
-//# sourceMappingURL=login.entity.js.map

@@ -23,4 +23,3 @@ __decorate([
     __metadata("design:type", String)
 ], createShopDto.prototype, "itemlist", void 0);
 exports.createShopDto = createShopDto;
-//# sourceMappingURL=createShop.dto.js.map

@@ -41,7 +41,6 @@ let AuthService = class AuthService {
         }
     }
     async loginuser(userLoginDto) {
-        console.log(userLoginDto);
         const { username, password } = userLoginDto;
         const user = await this.repo.findOne({ username });
         if (!user) {
@@ -65,4 +64,3 @@ AuthService = __decorate([
     __metadata("design:paramtypes", [typeorm_2.Repository, jwt_1.JwtService])
 ], AuthService);
 exports.AuthService = AuthService;
-//# sourceMappingURL=auth.service.js.map
