@@ -1,44 +1,45 @@
-// import { Body, Controller, Get, Post, Patch,Delete, ValidationPipe, Param, UseGuards } from '@nestjs/common';
-// import { loginStatusValidationPipe } from '../pipes/loginStatusValidation.pipe';
-// import { Shop } from 'src/auth/shop.decorator';
-// import { shopEntity } from 'src/entities/shop.entity';
+import { Body, Controller, Get, Post, Patch,Delete, ValidationPipe, Param } from '@nestjs/common';
+//import { loginStatusValidationPipe } from '../pipes/loginStatusValidation.pipe';
+import { Shop } from 'src/auth/shop.decorator';
+import { shopEntity } from 'src/entities/shop.entity';
+import { createShopDto } from 'src/DTO/createShop.dto';
+import { ShopService } from './shop.service';
 
-// // http://localhost:3000/shop
-// @Controller('shop')
-// export class LoginController {
+// http://localhost:3000/shop
+@Controller('shop')
+export class shopController {
 
-//     constructor(private loginService: shopService) {
-//     }
-//     //http GET verb
-//     @Get()
-//     getAllShops(
-//         @Shop() 
-//         shop: shopEntity
-//     ) {
+    constructor(private shopService: ShopService) {
+    }
+    //http GET verb
+    @Get()
+    getAllShops(
+        @Shop() 
+        shop: shopEntity
+    ) {
         
-//         return this.loginService.getAllShops(shop);
-//     }
+        return this.shopService.getAllShops(shop);
+    }
 
-//     @Post()
-//     createNewShop(@Body(ValidationPipe) data: createShopDto, @Shop() shop: shopEntity) {
+    @Post()
+    createNewShop(@Body(ValidationPipe) data: createShopDto, @Shop() shop: shopEntity) {
 
-//         const { email, password } = data;
+        const { shopName, itemList } = data;
+        
+        return this.shopService.createShop(data, shop);
+    }
 
-//         return this.loginService.createLogin(data, shop);
-//     }
+    @Patch(':id')
+    updateShop(
+        @Param(':id') id: number,
+        @Shop() shop: shopEntity) {
+        //return this.shopService.update(id, shop);
+    }
 
-//     @Patch(':id')
-//     updateShop(
-//         @Body('status', loginStatusValidationPipe) status: loginStatus,
-//         @Param(':id') id: number,
-//         @shop() shop: shopEntity) {
-//         return this.loginService.update(id, status, shop);
-//     }
-
-//     @Delete(':id')
-//     deleteShop(@Param('id') id: number, @shop() shop: shopEntity) {
-//         return this.loginService.delete(id, shop);
-//     }
-// }
+    @Delete(':id')
+    deleteShop(@Param('id') id: number, @Shop() shop: shopEntity) {
+        return this.shopService.delete(id, shop);
+    }
+}
 
 

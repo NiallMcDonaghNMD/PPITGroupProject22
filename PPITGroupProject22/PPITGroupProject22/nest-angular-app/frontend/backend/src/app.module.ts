@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoginModule } from './login/login.module';
 import {userEntity} from './entities/user.entity';
+import { shopModule } from './shop/shop.module';
 
 @Module({
   imports: [
@@ -14,10 +15,11 @@ import {userEntity} from './entities/user.entity';
       username: 'root',
       password: '', //Update this when DB is installed/working
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }),
     TypeOrmModule.forFeature([userEntity]),
-    LoginModule 
+    LoginModule,
+    shopModule
   ],
   controllers: [AppController], //ContactsController
   providers: [AppService], //ContactService

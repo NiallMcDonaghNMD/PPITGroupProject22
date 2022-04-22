@@ -21,5 +21,5 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], createShopDto.prototype, "itemlist", void 0);
+], createShopDto.prototype, "itemList", void 0);
 exports.createShopDto = createShopDto;

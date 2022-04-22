@@ -6,5 +6,5 @@ export class createShopDto {
     shopName: string;
    
     @IsNotEmpty()
-    itemlist: string;
+    itemList: string;
 }

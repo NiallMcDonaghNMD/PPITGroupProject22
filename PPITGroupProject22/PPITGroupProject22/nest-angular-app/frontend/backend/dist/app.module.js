@@ -13,6 +13,7 @@ const app_service_1 = require("./app.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const login_module_1 = require("./login/login.module");
 const user_entity_1 = require("./entities/user.entity");
+const shop_module_1 = require("./shop/shop.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -25,10 +26,11 @@ AppModule = __decorate([
                 username: 'root',
                 password: '',
                 autoLoadEntities: true,
-                synchronize: true,
+                synchronize: false,
             }),
             typeorm_1.TypeOrmModule.forFeature([user_entity_1.userEntity]),
-            login_module_1.LoginModule
+            login_module_1.LoginModule,
+            shop_module_1.shopModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
