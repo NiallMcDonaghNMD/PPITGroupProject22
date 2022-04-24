@@ -1,13 +1,13 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity,  PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class shopEntity {
     @PrimaryGeneratedColumn()
     id: number;
-    @Column({ default: null })
+    @Column()
     shopName: string;
 
-    @Column({ default: null , array: true})
+    @Column({ array: true})
     itemList: string;
    
   //  @ManyToOne(() => userEntity, (user) => user.todos)
@@ -15,4 +15,6 @@ export class shopEntity {
 
     @Column()
     shopId: number;
+
+   
 }//end entity

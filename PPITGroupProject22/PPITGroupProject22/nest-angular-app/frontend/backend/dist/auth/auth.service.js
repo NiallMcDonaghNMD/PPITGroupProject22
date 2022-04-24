@@ -19,6 +19,7 @@ const user_entity_1 = require("../entities/user.entity");
 const typeorm_2 = require("typeorm");
 const bcrypt = require("bcryptjs");
 const jwt_1 = require("@nestjs/jwt");
+const shop_entity_1 = require("../entities/shop.entity");
 let AuthService = class AuthService {
     constructor(repo, jwt) {
         this.repo = repo;
@@ -55,6 +56,19 @@ let AuthService = class AuthService {
         }
         else {
             throw new common_1.UnauthorizedException('Invalid credentials');
+        }
+    }
+    async registerShop(registerDTO) {
+        const { shopName, itemList } = registerDTO;
+        const shop = new shop_entity_1.shopEntity();
+        shop.shopName = shopName;
+        shop.itemList = itemList;
+        this.repo.create(shop);
+        try {
+            return await this.repo.save(shop);
+        }
+        catch (err) {
+            throw new common_1.InternalServerErrorException('Something went wrong, shop was not created.');
         }
     }
 };

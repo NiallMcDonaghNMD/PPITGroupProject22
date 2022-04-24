@@ -18,11 +18,11 @@ __decorate([
     __metadata("design:type", Number)
 ], shopEntity.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: null }),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], shopEntity.prototype, "shopName", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: null, array: true }),
+    (0, typeorm_1.Column)({ array: true }),
     __metadata("design:type", String)
 ], shopEntity.prototype, "itemList", void 0);
 __decorate([

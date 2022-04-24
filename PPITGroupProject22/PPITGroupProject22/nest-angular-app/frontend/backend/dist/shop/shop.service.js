@@ -23,7 +23,7 @@ let ShopService = class ShopService {
     }
     async getAllShops(shop) {
         const query = await this.repo.createQueryBuilder('shop');
-        query.where('todo.shopId = :shopId', { shopId: shop.id });
+        query.where('shopId = :shopId', { shopId: shop.shopId });
         try {
             return await query.getMany();
         }

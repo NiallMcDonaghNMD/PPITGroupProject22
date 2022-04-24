@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {Router} from '@angular/router';
-import {ToastrService} from 'ngx-toastr';
-import {tap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class ApiService {
   private API_URL = 'http://localhost:3000';
 
   constructor(private http: HttpClient,
-              private router: Router,
-              private toast: ToastrService) {
+    private router: Router,
+    private toast: ToastrService) {
     const fetchedToken = localStorage.getItem('act');
 
     if (fetchedToken) {
@@ -40,7 +40,7 @@ export class ApiService {
 
   login(username: string, password: string) {
 
-    this.http.post(`${this.API_URL}/auth/stafflogin`, {username, password})
+    this.http.post(`${this.API_URL}/auth/stafflogin`, { username, password })
       // @ts-ignore
       .subscribe((res: { token: string }) => {
         this.token = res.token;
@@ -58,9 +58,8 @@ export class ApiService {
       }, (err: HttpErrorResponse) => console.log(err.message));
   }
 
-  register (username: string, password: string)
-  {
-    return this.http.post(`${this.API_URL}/auth/staffregister`, {username, password})
+  register(username: string, password: string) {
+    return this.http.post(`${this.API_URL}/auth/staffregister`, { username, password })
 
   }
   // tslint:disable-next-line:typedef
@@ -78,7 +77,7 @@ export class ApiService {
 
   // tslint:disable-next-line:typedef
   createTodo(title: string, description: string) {
-    return this.http.post(`${this.API_URL}/login`, {title, description}, {
+    return this.http.post(`${this.API_URL}/login`, { title, description }, {
       headers: {
         Authorization: `Bearer ${this.token}`
       }
@@ -87,7 +86,7 @@ export class ApiService {
 
   // tslint:disable-next-line:typedef
   updateStatus(statusValue: string, loginId: number) {
-    return this.http.patch(`${this.API_URL}/login/${loginId}`, {status: statusValue}, {
+    return this.http.patch(`${this.API_URL}/login/${loginId}`, { status: statusValue }, {
       headers: {
         Authorization: `Bearer ${this.token}`
       }
@@ -117,4 +116,9 @@ export class ApiService {
     );
   }
 
+  //Shop services
+  registerStop(shopName: string, itemList: string) {
+    return this.http.post(`${this.API_URL}/shopRegister`, { shopName, itemList })
+
+  }
 }

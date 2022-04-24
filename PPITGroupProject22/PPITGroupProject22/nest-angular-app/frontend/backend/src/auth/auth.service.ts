@@ -7,6 +7,7 @@ import * as bcrypt from 'bcryptjs';
 import { userLoginDto } from "src/DTO/userLogin.dto";
 import { JwtService } from "@nestjs/jwt"
 import {createShopDto} from "src/DTO/createShop.dto";
+import { shopEntity } from "src/entities/shop.entity";
 
 @Injectable()
 export class AuthService {
@@ -57,6 +58,20 @@ export class AuthService {
         }
     }
 
+    async registerShop(registerDTO: createShopDto) {
+        const { shopName, itemList } = registerDTO;
+        
+        const shop = new shopEntity();
     
+        shop.shopName = shopName;
+        shop.itemList = itemList;
+        this.repo.create(shop);
+
+        try {
+            return await this.repo.save(shop);
+        } catch (err) {
+            throw new InternalServerErrorException('Something went wrong, shop was not created.');
+        }
+    }
     
 }
