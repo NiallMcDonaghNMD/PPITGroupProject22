@@ -17,7 +17,8 @@ export class shopController {
         @Shop() 
         shop: shopEntity
     ) {
-        
+        //delete this later
+        console.log(shop);
         return this.shopService.getAllShops(shop);
     }
 
@@ -29,17 +30,17 @@ export class shopController {
         return this.shopService.createShop(data, shop);
     }
 
-    @Patch(':id')
-    updateShop(
-        @Param(':id') id: number,
-        @Shop() shop: shopEntity) {
-        //return this.shopService.update(id, shop);
-    }
+    // @Patch(':shopId')
+    // updateShop(
+    //     @Param(':shopId') id: number,
+    //     @Shop() shop: shopEntity) {
+    //     return this.shopService.update(id, shop);
+    // }
 
-    @Delete(':id')
-    deleteShop(@Param('id') id: number, @Shop() shop: shopEntity) {
-        return this.shopService.delete(id, shop);
-    }
+    //  @Delete(':shopId')
+    //  deleteShop(@Param('shopId') id: number, @Shop() shop: shopEntity) {
+    //      return this.shopService.delete(shop);
+    //  }
 }
 
 

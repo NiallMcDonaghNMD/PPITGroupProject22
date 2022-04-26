@@ -14,6 +14,7 @@ const typeorm_1 = require("@nestjs/typeorm");
 const login_module_1 = require("./login/login.module");
 const user_entity_1 = require("./entities/user.entity");
 const shop_module_1 = require("./shop/shop.module");
+const shop_entity_1 = require("./entities/shop.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -26,9 +27,9 @@ AppModule = __decorate([
                 username: 'root',
                 password: '',
                 autoLoadEntities: true,
-                synchronize: false,
+                synchronize: true,
             }),
-            typeorm_1.TypeOrmModule.forFeature([user_entity_1.userEntity]),
+            typeorm_1.TypeOrmModule.forFeature([user_entity_1.userEntity, shop_entity_1.shopEntity]),
             login_module_1.LoginModule,
             shop_module_1.shopModule
         ],

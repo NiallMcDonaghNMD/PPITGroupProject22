@@ -1,6 +1,5 @@
 export declare class shopEntity {
-    id: number;
+    shopId: number;
     shopName: string;
     itemList: string;
-    shopId: number;
 }

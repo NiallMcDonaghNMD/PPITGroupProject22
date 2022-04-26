@@ -33,8 +33,17 @@ export class ShopService {
 
         this.repo.create(shopList);
         await this.repo.save(shopList);
-        shop.shopId = shop.id;
+        shopList.shopId = shop.shopId;
     }
+
+    // async update(shopId: number, itemList: shopEntity) {
+    //     try {
+    //         await this.repo.update({shopId, itemList}, {});
+    //         return this.repo.findOne({ shopId });
+    //     } catch (err) {
+    //         throw new InternalServerErrorException('Something went wrong');
+    //     }
+    // }
 
     // async update(id: number, status: loginStatus, user: userEntity)
     // {
@@ -46,17 +55,9 @@ export class ShopService {
     //       }
     // }
 
-    // async update(id: number, itemList: shopEntity) {
-    //     try {
-    //         await this.repo.update({shopName, itemList}, {});
-    //         return this.repo.findOne({ id });
-    //     } catch (err) {
-    //         throw new InternalServerErrorException('Something went wrong');
-    //     }
-    // }
 
-    async delete(id: number, user: shopEntity) {
-        const result = await this.repo.delete({ id, shopId: user.id })
+    async delete(shopId: number, user: shopEntity) {
+        const result = await this.repo.delete({ shopId: user.shopId })
 
         if (result.affected == 0) {
             throw new NotFoundException('not deleted');

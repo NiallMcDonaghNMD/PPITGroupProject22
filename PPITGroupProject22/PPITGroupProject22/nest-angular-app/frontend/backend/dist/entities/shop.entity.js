@@ -16,19 +16,15 @@ let shopEntity = class shopEntity {
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], shopEntity.prototype, "id", void 0);
+], shopEntity.prototype, "shopId", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ default: null }),
     __metadata("design:type", String)
 ], shopEntity.prototype, "shopName", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ array: true }),
+    (0, typeorm_1.Column)({ default: null }),
     __metadata("design:type", String)
 ], shopEntity.prototype, "itemList", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], shopEntity.prototype, "shopId", void 0);
 shopEntity = __decorate([
     (0, typeorm_1.Entity)()
 ], shopEntity);

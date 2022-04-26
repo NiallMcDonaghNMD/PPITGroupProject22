@@ -11,8 +11,8 @@ import { shopEntity } from "src/entities/shop.entity";
 
 @Injectable()
 export class AuthService {
-    constructor(@InjectRepository(userEntity) private repo: Repository<userEntity>, private jwt: JwtService) {
-
+    constructor(@InjectRepository(userEntity) private repo: Repository<userEntity>,@InjectRepository(shopEntity) 
+    private shopRepo: Repository<shopEntity> ,private jwt: JwtService) {
     }
 
     async registerUser(registerDTO: RegisterUserDto) {
@@ -65,10 +65,10 @@ export class AuthService {
     
         shop.shopName = shopName;
         shop.itemList = itemList;
-        this.repo.create(shop);
+        this.shopRepo.create(shop);
 
         try {
-            return await this.repo.save(shop);
+            return await this.shopRepo.save(shop);
         } catch (err) {
             throw new InternalServerErrorException('Something went wrong, shop was not created.');
         }

@@ -38,10 +38,10 @@ let ShopService = class ShopService {
         shopList.itemList = itemList;
         this.repo.create(shopList);
         await this.repo.save(shopList);
-        shop.shopId = shop.id;
+        shopList.shopId = shop.shopId;
     }
-    async delete(id, user) {
-        const result = await this.repo.delete({ id, shopId: user.id });
+    async delete(shopId, user) {
+        const result = await this.repo.delete({ shopId: user.shopId });
         if (result.affected == 0) {
             throw new common_1.NotFoundException('not deleted');
         }

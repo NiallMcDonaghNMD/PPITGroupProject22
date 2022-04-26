@@ -1,0 +1,42 @@
+<p>shop-register works!</p>
+<div class="text-center">
+    <div class="login-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="font-size: 2rem; font-family: Calibri, sans-serif;">Shop Registration
+                        </div>
+                        <div class="card-body">
+                            <form #registerForm="ngForm" (ngSubmit)="registerShop(registerForm)">
+                                <div class="form-group row">
+                                    <label for="shop_name"
+                                        class="col-md-4 col-form-label text-md-right">Shop Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="shopName" class="form-control" name="username"
+                                            required autofocus ngModel>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="itemList" class="col-md-4 col-form-label text-md-right">item list</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="itemList" class="form-control" name="itemList"
+                                            required ngModel>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 offset-md-4 d-flex flex-column">
+                                    <button type="submit" [disabled]="registerForm.invalid"
+                                        class="btn btn-primary d-block flex-grow-1 mb-3">
+                                        Register Shop
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

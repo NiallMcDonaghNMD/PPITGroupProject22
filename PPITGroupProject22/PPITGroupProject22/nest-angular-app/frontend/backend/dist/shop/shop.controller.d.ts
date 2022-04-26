@@ -6,8 +6,4 @@ export declare class shopController {
     constructor(shopService: ShopService);
     getAllShops(shop: shopEntity): Promise<shopEntity[]>;
     createNewShop(data: createShopDto, shop: shopEntity): Promise<void>;
-    updateShop(id: number, shop: shopEntity): void;
-    deleteShop(id: number, shop: shopEntity): Promise<{
-        success: boolean;
-    }>;
 }

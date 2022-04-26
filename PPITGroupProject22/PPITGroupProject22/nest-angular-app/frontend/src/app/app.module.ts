@@ -17,12 +17,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInput, MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { staffRegisterComponent } from './staff-register/staff-register.component';
+import { shopRegisterComponent } from './shop-register/shop-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StaffLoginComponent,
-    staffRegisterComponent
+    staffRegisterComponent,
+    shopRegisterComponent
   ],
   imports: [
     HttpClientModule,

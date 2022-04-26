@@ -6,7 +6,7 @@ export declare class ShopService {
     constructor(repo: Repository<shopEntity>);
     getAllShops(shop: shopEntity): Promise<shopEntity[]>;
     createShop(createShopDto: createShopDto, shop: shopEntity): Promise<void>;
-    delete(id: number, user: shopEntity): Promise<{
+    delete(shopId: number, user: shopEntity): Promise<{
         success: boolean;
     }>;
 }

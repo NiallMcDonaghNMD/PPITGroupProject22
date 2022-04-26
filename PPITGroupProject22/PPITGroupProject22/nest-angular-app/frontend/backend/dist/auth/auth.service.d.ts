@@ -7,11 +7,12 @@ import { createShopDto } from "src/DTO/createShop.dto";
 import { shopEntity } from "src/entities/shop.entity";
 export declare class AuthService {
     private repo;
+    private shopRepo;
     private jwt;
-    constructor(repo: Repository<userEntity>, jwt: JwtService);
+    constructor(repo: Repository<userEntity>, shopRepo: Repository<shopEntity>, jwt: JwtService);
     registerUser(registerDTO: RegisterUserDto): Promise<userEntity>;
     loginuser(userLoginDto: userLoginDto): Promise<{
         token: string;
     }>;
-    registerShop(registerDTO: createShopDto): Promise<shopEntity & userEntity>;
+    registerShop(registerDTO: createShopDto): Promise<shopEntity>;
 }

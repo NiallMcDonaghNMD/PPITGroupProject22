@@ -15,12 +15,13 @@ const user_entity_1 = require("../entities/user.entity");
 const jwt_1 = require("@nestjs/jwt");
 const passport_1 = require("@nestjs/passport");
 const jwt_custom_strategy_1 = require("./jwt-custom.strategy");
+const shop_entity_1 = require("../entities/shop.entity");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            typeorm_1.TypeOrmModule.forFeature([user_entity_1.userEntity]),
+            typeorm_1.TypeOrmModule.forFeature([user_entity_1.userEntity, shop_entity_1.shopEntity]),
             jwt_1.JwtModule.register({
                 secret: 'LOijtrkljdklsufidsui12jkj43k21l4',
                 signOptions: {

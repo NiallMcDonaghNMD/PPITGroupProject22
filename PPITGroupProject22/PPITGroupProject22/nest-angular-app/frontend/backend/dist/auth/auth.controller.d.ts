@@ -9,5 +9,5 @@ export declare class AuthController {
     signIn(loginDTO: userLoginDto): Promise<{
         token: string;
     }>;
-    register(createShopDto: createShopDto): Promise<import("../entities/shop.entity").shopEntity & import("../entities/user.entity").userEntity>;
+    register(createShopDto: createShopDto): Promise<import("../entities/shop.entity").shopEntity>;
 }

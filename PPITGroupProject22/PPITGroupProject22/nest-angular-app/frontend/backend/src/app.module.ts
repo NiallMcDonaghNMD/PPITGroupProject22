@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoginModule } from './login/login.module';
 import {userEntity} from './entities/user.entity';
 import { shopModule } from './shop/shop.module';
+import { shopEntity } from './entities/shop.entity';
 
 @Module({
   imports: [
@@ -15,9 +16,9 @@ import { shopModule } from './shop/shop.module';
       username: 'root',
       password: '', //Update this when DB is installed/working
       autoLoadEntities: true,
-      synchronize: false,
+      synchronize: true,
     }),
-    TypeOrmModule.forFeature([userEntity]),
+    TypeOrmModule.forFeature([userEntity, shopEntity]),
     LoginModule,
     shopModule
   ],

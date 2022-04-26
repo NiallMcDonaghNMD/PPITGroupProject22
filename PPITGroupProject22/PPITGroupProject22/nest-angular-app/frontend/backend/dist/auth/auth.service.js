@@ -21,8 +21,9 @@ const bcrypt = require("bcryptjs");
 const jwt_1 = require("@nestjs/jwt");
 const shop_entity_1 = require("../entities/shop.entity");
 let AuthService = class AuthService {
-    constructor(repo, jwt) {
+    constructor(repo, shopRepo, jwt) {
         this.repo = repo;
+        this.shopRepo = shopRepo;
         this.jwt = jwt;
     }
     async registerUser(registerDTO) {
@@ -63,9 +64,9 @@ let AuthService = class AuthService {
         const shop = new shop_entity_1.shopEntity();
         shop.shopName = shopName;
         shop.itemList = itemList;
-        this.repo.create(shop);
+        this.shopRepo.create(shop);
         try {
-            return await this.repo.save(shop);
+            return await this.shopRepo.save(shop);
         }
         catch (err) {
             throw new common_1.InternalServerErrorException('Something went wrong, shop was not created.');
@@ -75,6 +76,8 @@ let AuthService = class AuthService {
 AuthService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(user_entity_1.userEntity)),
-    __metadata("design:paramtypes", [typeorm_2.Repository, jwt_1.JwtService])
+    __param(1, (0, typeorm_1.InjectRepository)(shop_entity_1.shopEntity)),
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        typeorm_2.Repository, jwt_1.JwtService])
 ], AuthService);
 exports.AuthService = AuthService;

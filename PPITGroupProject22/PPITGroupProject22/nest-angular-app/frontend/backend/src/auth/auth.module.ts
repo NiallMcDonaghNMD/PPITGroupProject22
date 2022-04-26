@@ -6,10 +6,11 @@ import { userEntity } from "../entities/user.entity";
 import { JwtModule } from "@nestjs/jwt";
 import {PassportModule} from "@nestjs/passport";
 import { jwtCustomStrategy } from './jwt-custom.strategy';
+import { shopEntity } from 'src/entities/shop.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([userEntity]),
+    TypeOrmModule.forFeature([userEntity, shopEntity]),
     JwtModule.register({
       secret: 'LOijtrkljdklsufidsui12jkj43k21l4',
       signOptions: {
@@ -26,12 +27,3 @@ import { jwtCustomStrategy } from './jwt-custom.strategy';
   exports: [PassportModule, jwtCustomStrategy]
 })
 export class AuthModule {}
-
-// @Module({
-//     imports: [
-//       TypeOrmModule.forFeature([loginEntity])
-//     ],
-//     controllers: [LoginController],
-//     providers: [LoginService]
-//   })
-//   export class LoginModule {}

@@ -3,18 +3,14 @@ import { Column, Entity,  PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class shopEntity {
     @PrimaryGeneratedColumn()
-    id: number;
-    @Column()
+    shopId: number;
+    @Column({ default: null })
     shopName: string;
 
-    @Column({ array: true})
+    @Column({ default: null})
     itemList: string;
    
-  //  @ManyToOne(() => userEntity, (user) => user.todos)
-  //  user: userEntity
+    // @ManyToOne(() => itemList, (shop) => shop)
+    // shop: itemList;
 
-    @Column()
-    shopId: number;
-
-   
 }//end entity

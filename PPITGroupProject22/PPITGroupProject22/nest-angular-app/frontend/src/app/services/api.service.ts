@@ -117,8 +117,8 @@ export class ApiService {
   }
 
   //Shop services
-  registerStop(shopName: string, itemList: string) {
-    return this.http.post(`${this.API_URL}/shopRegister`, { shopName, itemList })
+  registerShop(shopName: string, itemList: string) {
+    return this.http.post(`${this.API_URL}/auth/shopregister`, { shopName, itemList })
 
   }
 }
