@@ -18,17 +18,17 @@ export class shopRegisterComponent implements OnInit {
     console.log("testing shop register");
   }
 
-  registerShop(registerForm: NgForm) {
-    if (registerForm.invalid) {
+  registerShop(regForm: NgForm) {
+    if (regForm.invalid) {
       
       return;
     }
 
-    const { shopName, itemList } = registerForm.value;
+    const { shopName, itemList } = regForm.value;
 
-    this.apiService.register(shopName, itemList).subscribe(res => {
+    this.apiService.registerShop(shopName, itemList).subscribe(res => {
 
-      registerForm.reset();
+      regForm.reset();
     });
 
   }
