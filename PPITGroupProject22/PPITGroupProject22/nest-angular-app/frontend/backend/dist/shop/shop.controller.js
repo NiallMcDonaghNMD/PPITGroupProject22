@@ -30,6 +30,12 @@ let shopController = class shopController {
         const { shopName, itemList } = data;
         return this.shopService.createShop(data, shop);
     }
+    updateShop(shopId, shop) {
+        return this.shopService.update(shopId, shop);
+    }
+    deleteShop(shopId, shop) {
+        return this.shopService.delete(shopId, shop);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -46,6 +52,22 @@ __decorate([
     __metadata("design:paramtypes", [createShop_dto_1.createShopDto, shop_entity_1.shopEntity]),
     __metadata("design:returntype", void 0)
 ], shopController.prototype, "createNewShop", null);
+__decorate([
+    (0, common_1.Patch)(':shopId'),
+    __param(0, (0, common_1.Param)(':shopId')),
+    __param(1, (0, shop_decorator_1.Shop)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, shop_entity_1.shopEntity]),
+    __metadata("design:returntype", void 0)
+], shopController.prototype, "updateShop", null);
+__decorate([
+    (0, common_1.Delete)(':shopId'),
+    __param(0, (0, common_1.Param)('shopId')),
+    __param(1, (0, shop_decorator_1.Shop)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, shop_entity_1.shopEntity]),
+    __metadata("design:returntype", void 0)
+], shopController.prototype, "deleteShop", null);
 shopController = __decorate([
     (0, common_1.Controller)('shop'),
     __metadata("design:paramtypes", [shop_service_1.ShopService])

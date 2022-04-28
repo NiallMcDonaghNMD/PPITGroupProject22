@@ -30,17 +30,17 @@ export class shopController {
         return this.shopService.createShop(data, shop);
     }
 
-    // @Patch(':shopId')
-    // updateShop(
-    //     @Param(':shopId') id: number,
-    //     @Shop() shop: shopEntity) {
-    //     return this.shopService.update(id, shop);
-    // }
+    @Patch(':shopId')
+    updateShop(
+        @Param(':shopId') shopId: number,
+        @Shop() shop: shopEntity) {
+        return this.shopService.update(shopId, shop);
+    }
 
-    //  @Delete(':shopId')
-    //  deleteShop(@Param('shopId') id: number, @Shop() shop: shopEntity) {
-    //      return this.shopService.delete(shop);
-    //  }
+     @Delete(':shopId')
+     deleteShop(@Param('shopId') shopId: number, @Shop() shop: shopEntity) {
+         return this.shopService.delete(shopId, shop);
+     }
 }
 
 

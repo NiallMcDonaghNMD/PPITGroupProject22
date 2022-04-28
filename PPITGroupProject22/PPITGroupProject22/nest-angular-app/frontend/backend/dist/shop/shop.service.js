@@ -40,6 +40,15 @@ let ShopService = class ShopService {
         await this.repo.save(shopList);
         shopList.shopId = shop.shopId;
     }
+    async update(shopId, itemList) {
+        try {
+            await this.repo.update({ shopId, itemList: itemList.itemList }, {});
+            return this.repo.findOne({ shopId });
+        }
+        catch (err) {
+            throw new common_1.InternalServerErrorException('Something went wrong');
+        }
+    }
     async delete(shopId, user) {
         const result = await this.repo.delete({ shopId: user.shopId });
         if (result.affected == 0) {

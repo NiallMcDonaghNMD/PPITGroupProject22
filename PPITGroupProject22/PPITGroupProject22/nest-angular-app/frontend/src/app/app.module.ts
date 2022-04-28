@@ -18,13 +18,15 @@ import {MatInput, MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { staffRegisterComponent } from './staff-register/staff-register.component';
 import { shopRegisterComponent } from './shop-register/shop-register.component';
+import { ShopInterfaceComponent } from './shop-interface/shop-interface.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StaffLoginComponent,
     staffRegisterComponent,
-    shopRegisterComponent
+    shopRegisterComponent,
+    ShopInterfaceComponent
   ],
   imports: [
     HttpClientModule,
