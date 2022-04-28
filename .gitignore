@@ -5,6 +5,8 @@ nest-angular-app/frontend/node_modules
 # Created by https://www.toptal.com/developers/gitignore/api/angular,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=angular,react
 
+*.docx
+
 ### Angular ###
 ## Angular ##
 # compiled output
