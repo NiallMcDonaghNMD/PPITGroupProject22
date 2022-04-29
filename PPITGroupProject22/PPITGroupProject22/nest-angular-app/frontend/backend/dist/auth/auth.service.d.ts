@@ -10,9 +10,7 @@ export declare class AuthService {
     private shopRepo;
     private jwt;
     constructor(repo: Repository<userEntity>, shopRepo: Repository<shopEntity>, jwt: JwtService);
-    registerUser(registerDTO: RegisterUserDto): Promise<userEntity>;
-    loginuser(userLoginDto: userLoginDto): Promise<{
-        token: string;
-    }>;
-    registerShop(registerDTO: createShopDto): Promise<shopEntity>;
+    registerUser(registerDTO: RegisterUserDto): unknown;
+    loginuser(userLoginDto: userLoginDto): unknown;
+    registerShop(registerDTO: createShopDto): unknown;
 }

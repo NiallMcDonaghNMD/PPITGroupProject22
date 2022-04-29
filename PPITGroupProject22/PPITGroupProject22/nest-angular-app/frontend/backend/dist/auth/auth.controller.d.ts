@@ -5,9 +5,7 @@ import { createShopDto } from "src/DTO/createShop.dto";
 export declare class AuthController {
     private authService;
     constructor(authService: AuthService);
-    registration(regDTO: RegisterUserDto): Promise<import("../entities/user.entity").userEntity>;
-    signIn(loginDTO: userLoginDto): Promise<{
-        token: string;
-    }>;
-    register(createShopDto: createShopDto): Promise<import("../entities/shop.entity").shopEntity>;
+    registration(regDTO: RegisterUserDto): unknown;
+    signIn(loginDTO: userLoginDto): unknown;
+    register(createShopDto: createShopDto): unknown;
 }

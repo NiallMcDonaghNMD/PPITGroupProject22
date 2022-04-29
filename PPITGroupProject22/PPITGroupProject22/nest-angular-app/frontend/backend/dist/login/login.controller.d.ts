@@ -5,10 +5,8 @@ import { userEntity } from 'src/entities/user.entity';
 export declare class LoginController {
     private loginService;
     constructor(loginService: LoginService);
-    getAllLogins(user: userEntity): Promise<import("src/entities/login.entity").loginEntity[]>;
-    createNewLogin(data: createLoginDto, user: userEntity): Promise<void>;
-    updateLogin(status: loginStatus, id: number, user: userEntity): Promise<import("src/entities/login.entity").loginEntity>;
-    deleteLogin(id: number, user: userEntity): Promise<{
-        success: boolean;
-    }>;
+    getAllLogins(user: userEntity): unknown;
+    createNewLogin(data: createLoginDto, user: userEntity): any;
+    updateLogin(status: loginStatus, id: number, user: userEntity): unknown;
+    deleteLogin(id: number, user: userEntity): unknown;
 }

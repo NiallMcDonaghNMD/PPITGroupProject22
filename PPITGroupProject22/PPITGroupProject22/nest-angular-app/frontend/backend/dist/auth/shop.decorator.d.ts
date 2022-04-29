@@ -1,1 +1,1 @@
-export declare const Shop: (...dataOrPipes: unknown[]) => ParameterDecorator;
+export declare const Shop: any;

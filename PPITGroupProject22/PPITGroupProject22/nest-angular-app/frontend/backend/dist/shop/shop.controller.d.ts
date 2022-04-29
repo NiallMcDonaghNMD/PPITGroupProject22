@@ -4,10 +4,8 @@ import { ShopService } from './shop.service';
 export declare class shopController {
     private shopService;
     constructor(shopService: ShopService);
-    getAllShops(shop: shopEntity): Promise<shopEntity[]>;
-    createNewShop(data: createShopDto, shop: shopEntity): Promise<void>;
-    updateShop(shopId: number, shop: shopEntity): Promise<shopEntity>;
-    deleteShop(shopId: number, shop: shopEntity): Promise<{
-        success: boolean;
-    }>;
+    getAllShops(shop: shopEntity): unknown;
+    createNewShop(data: createShopDto, shop: shopEntity): any;
+    updateShop(shopId: number, shop: shopEntity): unknown;
+    deleteShop(shopId: number, shop: shopEntity): unknown;
 }

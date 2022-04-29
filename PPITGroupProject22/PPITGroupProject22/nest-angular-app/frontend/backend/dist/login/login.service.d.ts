@@ -5,10 +5,8 @@ import { Repository } from 'typeorm';
 export declare class LoginService {
     private repo;
     constructor(repo: Repository<loginEntity>);
-    getAllLogins(user: userEntity): Promise<loginEntity[]>;
-    createLogin(createLoginDto: createLoginDto, user: userEntity): Promise<void>;
-    update(id: number, status: loginStatus, user: userEntity): Promise<loginEntity>;
-    delete(id: number, user: userEntity): Promise<{
-        success: boolean;
-    }>;
+    getAllLogins(user: userEntity): unknown;
+    createLogin(createLoginDto: createLoginDto, user: userEntity): any;
+    update(id: number, status: loginStatus, user: userEntity): unknown;
+    delete(id: number, user: userEntity): unknown;
 }
