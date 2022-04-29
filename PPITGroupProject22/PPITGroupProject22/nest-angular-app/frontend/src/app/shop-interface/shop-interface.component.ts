@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-shop-interface',
@@ -8,7 +8,7 @@ import axios from 'axios';
 })
 export class ShopInterfaceComponent implements OnInit {
 
-  constructor() {
+  constructor(private apiService: ApiService) {
 
   }
 
@@ -16,10 +16,6 @@ export class ShopInterfaceComponent implements OnInit {
     
   }//end on init
 
-  getData()
-  {
-
-  }//end getData
-
+ 
 }//end ShopInterfaceComponent
 

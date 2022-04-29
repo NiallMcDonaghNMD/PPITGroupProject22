@@ -5,6 +5,7 @@ import { userEntity } from "./user.entity";
 export class loginEntity {
     @PrimaryGeneratedColumn()
     id: number;
+    
     @Column({ default: null })
     email: string;
 

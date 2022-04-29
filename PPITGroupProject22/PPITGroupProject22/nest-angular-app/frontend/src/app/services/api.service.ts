@@ -121,4 +121,5 @@ export class ApiService {
     return this.http.post(`${this.API_URL}/auth/shopregister`, { shopName, itemList })
 
   }
+  
 }

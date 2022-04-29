@@ -22,8 +22,8 @@ let ShopService = class ShopService {
         this.repo = repo;
     }
     async getAllShops(shop) {
-        const query = await this.repo.createQueryBuilder('shop');
-        query.where('shopId = :shopId', { shopId: shop.shopId });
+        const query = await this.repo.createQueryBuilder('shop_entity');
+        query.where('shopId > 0');
         try {
             return await query.getMany();
         }

@@ -1,4 +1,4 @@
-import { Column, Entity,  PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity,  ManyToOne,PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class shopEntity {
@@ -10,7 +10,9 @@ export class shopEntity {
     @Column({ default: null})
     itemList: string;
    
-    // @ManyToOne(() => itemList, (shop) => shop)
-    // shop: itemList;
+    // @ManyToOne(() => shopEntity, (shop) => shop)
+    // shop: shopEntity[];
 
+    //  @OneToMany(() => userEntity, (login) => login.username) //proberbly wrong, login.id
+    // todos: userEntity[]
 }//end entity

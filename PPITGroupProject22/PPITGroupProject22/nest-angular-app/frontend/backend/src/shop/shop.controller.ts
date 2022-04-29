@@ -17,9 +17,10 @@ export class shopController {
         @Shop() 
         shop: shopEntity
     ) {
-        //delete this later
-        console.log(shop);
-        return this.shopService.getAllShops(shop);
+        
+        return this.shopService.getAllShops(shop); //delete this
+        //return this.shopService.getAllShops(); //delete this
+
     }
 
     @Post()

@@ -12,11 +12,11 @@ export class ShopService {
     }
 
     async getAllShops(shop: shopEntity) {
-        const query = await this.repo.createQueryBuilder('shop');
+        const query = await this.repo.createQueryBuilder('shop_entity');
 
-        query.where('shopId = :shopId', { shopId: shop.shopId });
+        query.where('shopId > 0'); //*** Manually inputting numbers works but not automatic..fix later
         //return await this.repo.find();
-
+        
         try {
             return await query.getMany();
         }
@@ -24,6 +24,33 @@ export class ShopService {
             throw new NotFoundException('no shop found');
         }
     }
+
+    // async getAllLogins(user: userEntity)
+    // {
+    //     const query = await this.repo.createQueryBuilder('login');
+
+    //     query.where('todo.userId = :userId', {userId: user.id});
+    //     //return await this.repo.find();
+
+    //     try{
+    //         return await query.getMany();
+    //     }
+    //     catch(err) {
+    //         throw new NotFoundException('no login found');
+    //     }
+    // }
+
+    // async getAllShops() {
+    //     const query = await this.repo.createQueryBuilder('shop')
+    //     .select("*")
+    //     .from(shopEntity, "shopId")
+    //     .getMany();
+        
+    //     //console.log("shop service getAllShops = \n" + query);
+    //     return console.log("shop service getAllShops = \n" + query);
+        
+       
+    // }
 
     async createShop(createShopDto: createShopDto, shop: shopEntity) {
         const shopList = new shopEntity();
@@ -34,6 +61,7 @@ export class ShopService {
         this.repo.create(shopList);
         await this.repo.save(shopList);
         shopList.shopId = shop.shopId;
+        
     }
 
     async update(shopId: number, itemList: shopEntity) {

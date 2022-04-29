@@ -23,7 +23,6 @@ let shopController = class shopController {
         this.shopService = shopService;
     }
     getAllShops(shop) {
-        console.log(shop);
         return this.shopService.getAllShops(shop);
     }
     createNewShop(data, shop) {
