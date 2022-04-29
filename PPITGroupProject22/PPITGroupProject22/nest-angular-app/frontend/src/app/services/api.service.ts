@@ -122,4 +122,9 @@ export class ApiService {
 
   }
   
+  //Shop services
+  getShops() {
+    return this.http.post(`${this.API_URL}/shop`, {});
+
+  }
 }
