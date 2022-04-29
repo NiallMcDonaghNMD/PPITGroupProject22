@@ -11,7 +11,6 @@ export class AuthController {
   constructor(private authService: AuthService) {
   }
 
-
   @Post('staffregister')
   registration(@Body(ValidationPipe) regDTO: RegisterUserDto) {
     return this.authService.registerUser(regDTO);

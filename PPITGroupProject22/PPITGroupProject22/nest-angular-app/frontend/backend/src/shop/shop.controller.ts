@@ -18,8 +18,7 @@ export class shopController {
         shop: shopEntity
     ) {
         
-        return this.shopService.getAllShops(shop); //delete this
-        //return this.shopService.getAllShops(); //delete this
+        return this.shopService.getAllShops(shop); 
 
     }
 

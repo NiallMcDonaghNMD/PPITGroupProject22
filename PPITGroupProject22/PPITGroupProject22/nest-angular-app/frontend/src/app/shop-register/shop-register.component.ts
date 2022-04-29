@@ -14,8 +14,7 @@ export class shopRegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //delete this
-    console.log("testing shop register");
+    
   }
 
   registerShop(regForm: NgForm) {
